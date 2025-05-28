@@ -1,0 +1,130 @@
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Loading Spinner */
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #333;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Navigation */
+nav {
+  background: #222;
+  padding: 10px 20px;
+  transform: skewY(-2deg);
+  animation: navSlide 1s ease-in-out forwards;
+}
+
+@keyframes navSlide {
+  from { transform: translateY(-100%); }
+  to { transform: skewY(-2deg); }
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+nav li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav li a:hover {
+  color: #ff6347;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(270deg, #00c9ff, #92fe9d);
+  background-size: 400% 400%;
+  animation: bgMove 10s ease infinite;
+  padding: 80px 20px;
+  text-align: center;
+  color: white;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero .cta {
+  margin-top: 20px;
+  padding: 12px 30px;
+  font-size: 16px;
+  background-color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  animation: pulse 1.5s infinite;
+  transition: transform 0.3s ease;
+}
+
+.hero .cta:hover {
+  transform: scale(1.1);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  padding: 40px;
+  gap: 30px;
+}
+
+.product-card {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-origin: center;
+}
+
+.product-card:hover {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.slide-in {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideIn 1s ease forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
