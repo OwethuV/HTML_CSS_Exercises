@@ -34,6 +34,31 @@ function triggerErrors(value) {
     }
 }
 
+// TODO: Create a collection of helper functions for string manipulation 
+
+function getInitials(str) {
+  return str
+    .split(" ")
+    .map(word => word.charAt(0).toUpperCase())
+    .join("");
+}
+
+function reverseString(str) {
+  return str.split("").reverse().join("");
+}
+
+function capitalizeFirst(str) {
+  if (!str) return "";
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+function getInitials(str) {
+  return str
+    .split(" ")
+    .map(word => word.charAt(0).toUpperCase())
+    .join("");
+}
+
 // TODO: Create helper functions for array operations
 function getMax(numbers) {
     return Math.max(...numbers);
